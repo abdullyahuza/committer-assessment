@@ -4,11 +4,10 @@
 from flask import Flask, request, render_template, redirect, url_for, flash, session, send_file, jsonify, abort
 from flask_session import Session
 from tempfile import mkdtemp
-from database.models import db, setup_db,db_drop_and_create_all, User
+from database.models import db, setup_db,db_drop_and_create_all, User, Enquiry
 from auth import login_required
 from werkzeug.security import check_password_hash 
-from datetime import timedelta
-
+from datetime import timedelta, date
 #----------------------------------------------------------------------------#
 # App Config.
 #----------------------------------------------------------------------------#
@@ -38,16 +37,43 @@ setup_db(app)
 #----------------------------------------------------------------------------#
 
 # Home route
-@app.route('/')
+@app.route('/', methods=['GET','POST'])
 def index():
+	if request.method == "POST":
+
+		new_enquiry = Enquiry(
+			name=request.form["name"],
+			age=request.form["age"],
+			education=request.form["education"],
+			email=request.form["email"],
+			region=request.form["region"],
+			fin_gain=request.form["fin_gain"],
+			int_learn=request.form["int_learn"],
+			dev_inv=request.form["dev_inv"],
+			proj_desertion=request.form["proj_desertion"],
+			dev_status=request.form["dev_status"],
+			dev_experience=request.form["dev_experience"],
+			sys_int=request.form["sys_int"],
+			tech_norm=request.form["tech_norm"],
+			code_test=request.form["code_test"],
+			cont_code_dec=request.form["cont_code_dec"],
+			dec_right_del=request.form["dec_right_del"],
+			proj_age=request.form["proj_age"],
+			date_submitted=date.today()			
+		)
+		db.session.add(new_enquiry)
+		db.session.commit()
+		flash({'type': 'success', 'msg': 'You\'ve Successfully submitted your data.'})
+		return redirect('/#form')
 	return render_template('index.html')
 
 # Dashboard route
 @app.route('/lead', methods=['GET','POST'])
 def login():
-	
+	if session.get("user_id"):
+		return redirect(url_for("dashboard"))	
 	# Forget any user_id
-	session.clear()
+	# session.clear()
 
 	if request.method == "POST":
 		uname = request.form["username"]
@@ -59,7 +85,9 @@ def login():
 			if check_password_hash(login.password, passw):
 				# Remember which user has logged in
 				session["user_id"] = login.username
+				flash({'type': 'success', 'msg': f'Welcome back, {login.name}'})
 				return redirect(url_for("dashboard"))
+		flash({'type': 'error', 'msg': 'Invalid login credentials'})
 	return render_template("admin/login.html")
 
 
@@ -67,29 +95,43 @@ def login():
 @app.route('/dashboard')
 @login_required
 def dashboard():
-	return render_template('admin/index.html', current_page="Dashboard")
+	user = User.query.filter_by(username=session['user_id']).first()
+	user_data = user.details()
+
+	enquiries = Enquiry.query.all()
+
+	return render_template('admin/index.html', current_page="Dashboard", user=user_data, enquiries=enquiries)
 
 
 # File_prediction route
 @app.route('/from_file')
 @login_required
 def from_file():
-	return render_template('admin/upload.html', current_page="Prediction from file")
+	user = User.query.filter_by(username=session['user_id']).first()
+	user_data = user.details()
+	return render_template('admin/upload.html', current_page="Prediction from file", user=user_data)
 
 # Prediction result route
 @app.route('/status')
 @login_required
 def status():
-	return render_template('admin/prediction_result.html', current_page="Prediction Status")
+	user = User.query.filter_by(username=session['user_id']).first()
+	user_data = user.details()
+
+	return render_template('admin/prediction_result.html', current_page="Prediction Status", user=user_data)
 
 # Prediction result route
 @app.route('/status-file')
 @login_required
 def status_file():
-	return render_template('admin/prediction_result_file.html', current_page="File Prediction Status")
+	user = User.query.filter_by(username=session['user_id']).first()
+	user_data = user.details()
+
+	return render_template('admin/prediction_result_file.html', current_page="File Prediction Status", user=user_data)
 
 # logout route
 @app.route('/logout')
+@login_required
 def logout():
 	session.clear()
 	return redirect('/lead')

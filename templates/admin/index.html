@@ -2,6 +2,17 @@
 {% block title %}Dashboard{% endblock %}
 {% block content %}
     <section class="section dashboard">
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            {% if message.type == 'success' %}
+            <div id="alert" class="alert alert-primary text-center" role="alert">
+              {{ message.msg }}
+            </div>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
       <div class="row">
 
         <!-- Left side columns -->
@@ -27,15 +38,19 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Brandon Jacob</td>
-                        <td>Designer</td>
-                        <td>2016-05-25</td>
-                        <td>
-                          <button class="btn btn-primary rounded-pill btn-sm">Predict</button>
-                        </td>
-                      </tr>
+                      {% if enquiries %}
+                        {% for enquiry in enquiries %}
+                        <tr>
+                          <th scope="row">{{loop.index}}</th>
+                          <td>{{enquiry.name}}</td>
+                          <td>{{enquiry.email}}</td>
+                          <td>{{enquiry.date_submitted}}</td>
+                          <td>
+                            <a href="/predict/{{enquiry.id}}" class="btn btn-primary rounded-pill btn-sm">Predict</a>
+                          </td>
+                        </tr>
+                        {% endfor %}
+                      {% endif %}
                     </tbody>
                   </table>
 

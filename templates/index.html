@@ -67,19 +67,28 @@
         <!-- Contact-->
         <section class="page-section" id="form">
             <div class="container px-4 px-lg-5">
+                {% with messages = get_flashed_messages() %}
+                  {% if messages %}
+                    {% for message in messages %}
+                      {% if message.type == 'success' %}
+                        <h1 class="text-muted text-center mb-5" style="color: green;">{{message.msg}}</h1>
+                      {% endif %}
+                    {% endfor %}
+                  {% endif %}
+                {% endwith %}
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8 col-xl-6 text-center">
                         <h2 class="mt-0">Submit the Form!</h2>
                         <hr class="divider" />
                         <p class="text-muted mb-5">Ready to know your commitment status? Fill This Form!</p>
+
                     </div>
                 </div>
-
-                <form>
+                <form method="POST">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." data-sb-validations="required" />
+                                <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." required />
                                 <label for="name">Full name</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
                             </div>
@@ -87,7 +96,7 @@
 
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="age"  name="age" type="number" placeholder="Enter your age..." data-sb-validations="required" />
+                                <input class="form-control" id="age" name="age" type="number" min='0' oninput="validity.valid||(value='');" placeholder="Enter your age..." required />
                                 <label for="name">Age</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">Age is required.</div>
                             </div>
@@ -97,7 +106,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <select id="education" name="education" class="form-control">
+                                <select id="education" name="education" class="form-control" required>
                                     <option value=""></option>
                                     <option value="doctorate">Doctorate</option>
                                     <option value="master">Master</option>
@@ -110,7 +119,7 @@
 
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <select id="region" name="region" class="form-control">
+                                <select id="region" name="region" class="form-control" required>
                                     <option value=""></option>
                                     <option value="asia">Asia</option>
                                     <option value="caribbean">Caribbean</option>
@@ -128,7 +137,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="fin_gain" name="fin_gain" type="number" placeholder="Financal gain..." data-sb-validations="required" />
+                                <input class="form-control" id="fin_gain" name="fin_gain" type="number" min='0' oninput="validity.valid||(value='');" placeholder="Financal gain..." required />
                                 <label for="Financal">Financial gain</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">Financial gain is required.</div>
                             </div>
@@ -136,7 +145,7 @@
 
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="int_learn" name="int_learn" type="number" placeholder="Intention to learn..." data-sb-validations="required" />
+                                <input class="form-control" id="int_learn" name="int_learn" type="number" min='0' oninput="validity.valid||(value='');" placeholder="Intention to learn..." required />
                                 <label for="Intention">Intention to learn</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">Intention to learn is required.</div>
                             </div>
@@ -146,7 +155,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="dev_inv" name="dev_inv" name="" type="number" placeholder="Developer Involvement..." data-sb-validations="required" />
+                                <input class="form-control" id="dev_inv" name="dev_inv" name="" type="number" min='0' oninput="validity.valid||(value='');" placeholder="Developer Involvement..." required />
                                 <label for="Involvement">Developer Involvement</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">Developer Involvement is required.</div>
                             </div>
@@ -154,7 +163,7 @@
 
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="proj_desertion" name="proj_desertion" type="number" placeholder="Project desertion..." data-sb-validations="required" />
+                                <input class="form-control" id="proj_desertion" name="proj_desertion" type="number" min='0' oninput="validity.valid||(value='');" placeholder="Project desertion..." required />
                                 <label for="desertion">Project desertion</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">Project desertion is required.</div>
                             </div>
@@ -164,7 +173,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <select class="form-control" name="dev_status" id="dev_status">
+                                <select class="form-control" name="dev_status" id="dev_status" required>
                                     <option></option>
                                     <option>Planning</option>
                                     <option>Alpha</option>
@@ -179,7 +188,7 @@
 
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <select class="form-control" name="dev_experience" id="dev_experience">
+                                <select class="form-control" name="dev_experience" id="dev_experience" required>
                                     <option></option>
                                     <option value="1">1 year</option>
                                     <option value="2">2 years</option>
@@ -196,7 +205,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="sys_int" name="sys_int" type="number" placeholder="Developer Involvement..." data-sb-validations="required" />
+                                <input class="form-control" id="sys_int" name="sys_int" type="number" min='0' oninput="validity.valid||(value='');" placeholder="Developer Involvement..." required />
                                 <label for="Integration">System Integration</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">System Integration is required.</div>
                             </div>
@@ -204,7 +213,7 @@
 
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="tech_norm" name="tech_norm" type="number" placeholder="Technical contribution norm..." data-sb-validations="required" />
+                                <input class="form-control" id="tech_norm" name="tech_norm" type="number" min='0' oninput="validity.valid||(value='');" placeholder="Technical contribution norm..." required />
                                 <label for="Technical Norm">Technical norm</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">Technical contribution norm is required.</div>
                             </div>
@@ -214,7 +223,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="code_test" name="code_test" type="number" placeholder="Code Testing Task..." data-sb-validations="required" />
+                                <input class="form-control" id="code_test" name="code_test" type="number" min='0' oninput="validity.valid||(value='');" placeholder="Code Testing Task..." required />
                                 <label for="code testing task">Code Testing Task</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">Code Testing Task is required.</div>
                             </div>
@@ -222,7 +231,7 @@
 
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="cont_code_dec" name="cont_code_dec" type="number" placeholder="Technical contribution norm..." data-sb-validations="required" />
+                                <input class="form-control" id="cont_code_dec" name="cont_code_dec" type="number" min='0' oninput="validity.valid||(value='');" placeholder="Technical contribution norm..." required />
                                 <label for="name">Code Decoupling</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">Code decoupling is required.</div>
                             </div>
@@ -232,7 +241,7 @@
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="dec_right_del" name="dec_right_del" type="number" placeholder="Decision Right Deligation..." data-sb-validations="required" />
+                                <input class="form-control" id="dec_right_del" name="dec_right_del" type="number" min='0' oninput="validity.valid||(value='');" placeholder="Decision Right Deligation..." required />
                                 <label for="decision right deligation">Decision Right</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">Decision Right is required.</div>
                             </div>
@@ -240,7 +249,7 @@
 
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
-                                <select class="form-control" name="proj_age" id="proj_age">
+                                <select class="form-control" name="proj_age" id="proj_age" required>
                                     <option value=""></option>
                                     <option value="1">1 month</option>
                                     <option value="2">2 months</option>
@@ -256,7 +265,7 @@
                     <div class="row">
                         <div class="col-md-6" style="margin: 0 auto;">
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" name="email" type="email" placeholder="Email Address..." data-sb-validations="required" />
+                                <input class="form-control" id="email" name="email" type="email" placeholder="Email Address..." required />
                                 <label for="email">Email</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">Email.</div>
                             </div>

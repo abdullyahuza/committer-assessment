@@ -19,16 +19,17 @@ def setup_db(app):
     db.app = app
     db.init_app(app)
 
+
 def db_drop_and_create_all():
     db.drop_all()
     db.create_all()
-    
+
     # add one demo row which is helping in POSTMAN test
     admin = User(
-        username = "abdullyahuza",
-        name = "Abdull Yahuza",
-        email = "yahuzaabdulrazak@gmail.com",
-        password = generate_password_hash("codediam")
+        username="abdullyahuza",
+        name="Abdull Yahuza",
+        email="yahuzaabdulrazak@gmail.com",
+        password=generate_password_hash("codediam")
     )
     db.session.add(admin)
 
@@ -55,6 +56,7 @@ def db_drop_and_create_all():
     db.session.add(enquirer)
     db.session.commit()
 
+
 class User(db.Model):
     id = Column(Integer().with_variant(Integer, "sqlite"), primary_key=True)
     username = Column(String(80))
@@ -73,6 +75,7 @@ class User(db.Model):
 
     def __repr__(self):
         return json.dumps(self.details())
+
 
 class Enquiry(db.Model):
     id = Column(Integer().with_variant(Integer, "sqlite"), primary_key=True)
@@ -95,7 +98,6 @@ class Enquiry(db.Model):
     proj_age = Column(Integer)
     date_submitted = Column(Date)
 
-
     def details(self):
 
         return {
@@ -105,7 +107,7 @@ class Enquiry(db.Model):
             'email': self.email,
             'region': self.region,
             'fin_gain': self.fin_gain,
-            'int_learn' : self.int_learn,
+            'int_learn': self.int_learn,
             'dev_inv': self.dev_inv,
             'proj_desertion': self.proj_desertion,
             'dev_status': self.dev_status,

@@ -113,6 +113,20 @@ def dashboard():
         enquiries=enquiries)
 
 
+# Confirm route
+@app.route('/confirm/<int:e_id>')
+@login_required
+def confirm(e_id):
+    user = User.query.filter_by(username=session['user_id']).first()
+    user_data = user.details()
+
+    e_query = Enquiry.query.get(e_id)
+
+    return render_template(
+        'admin/confirm.html',
+        current_page="Confirm Data",
+        user=user_data, enquiry=e_query)
+
 # File_prediction route
 @app.route('/from_file')
 @login_required
@@ -125,8 +139,6 @@ def from_file():
         user=user_data)
 
 # Prediction result route
-
-
 @app.route('/status')
 @login_required
 def status():
@@ -139,8 +151,6 @@ def status():
         user=user_data)
 
 # Prediction result route
-
-
 @app.route('/status-file')
 @login_required
 def status_file():

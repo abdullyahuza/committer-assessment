@@ -32,7 +32,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 setup_db(app)
 
-# db_drop_and_create_all()
+db_drop_and_create_all()
 
 #----------------------------------------------------------------------------#
 # App Routes.
@@ -125,7 +125,7 @@ def confirm(e_id):
     return render_template(
         'admin/confirm.html',
         current_page="Confirm Data",
-        user=user_data, enquiry=e_query)
+        user=user_data, enquiry=e_query.details())
 
 # File_prediction route
 @app.route('/from_file')

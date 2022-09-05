@@ -101,23 +101,23 @@ class Enquiry(db.Model):
     def details(self):
 
         return {
-            'name': self.name,
+            'name': self.name.capitalize(),
             'age': self.age,
-            'education': self.education,
+            'education': self.education.capitalize(),
             'email': self.email,
-            'region': self.region,
+            'region': self.region.capitalize(),
             'fin_gain': self.fin_gain,
             'int_learn': self.int_learn,
             'dev_inv': self.dev_inv,
             'proj_desertion': self.proj_desertion,
-            'dev_status': self.dev_status,
+            'dev_status': self.dev_status.capitalize(),
             'dev_experience': self.dev_experience,
             'sys_int': self.sys_int,
             'tech_norm': self.tech_norm,
             'code_test': self.code_test,
             'cont_code_dec': self.cont_code_dec,
             'dec_right_del': self.dec_right_del,
-            'proj_age r': self.proj_age,
+            'proj_age': self.proj_age,
             'date_submitted': self.date_submitted
         }
 

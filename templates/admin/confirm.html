@@ -35,7 +35,7 @@
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
               
-                  <h5 class="card-title">Profile Details</h5>
+                  <h5 class="card-title">Personal Details</h5>
                   
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
@@ -65,6 +65,8 @@
                 </div>
                 
                 <div class="tab-pane fade show" id="prediction-data">
+
+                  <h5 class="card-title">Prediction Data</h5>
 
                   <div class="row">
                     <div class="col-lg-6 col-md-4 label">Financial Gain</div>
@@ -182,8 +184,10 @@
               },
               success: function(res){
                 console.log(res)
+                $("#predict").addClass('btn-success')
                 $("#btn-txt").text("Predicting...")
                 setTimeout(()=>{
+                  $("#predict").addClass('btn-info')
                   $("#btn-txt").text("Redirecting...")
                   window.location.href = res.redirect
                 },2000)

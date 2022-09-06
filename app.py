@@ -45,6 +45,7 @@ setup_db(app)
 @login_required
 def prefict():
     try:
+        e_id = int(request.form['e_id'])
         name = request.form['name']
         Int_Learn = float(request.form['int_learn'])
         Fin_Gain = float(request.form['fin_gain'])
@@ -56,9 +57,13 @@ def prefict():
         Dev_Inv = float(request.form['dev_inv'])
         Proj_Desertion = float(request.form['proj_desertion'])
         Dev_Experience = float(request.form['dev_experience'])
-
+        enquirer = Enquiry.query.get(e_id)
         pred = Prediction_from_api(Int_Learn, Fin_Gain, Tech_Cont_Norm, Sys_Int, Cod_Test_Task, Cont_Code_Dec,Dec_Right_Del, Dev_Inv, Proj_Desertion, Dev_Experience)
         pred_data = pred.prediction_api()
+
+        enquirer.promoted = True
+        db.session.commit()
+        print(enquirer)
         status = f"Congratulate {name}!! He is Promoted" if pred_data == 1 else f"Sorry {name}!! Not Promoted"
         flash({'type': "success" if pred_data == 1 else "error", 'msg': status})
         return jsonify({
@@ -68,8 +73,8 @@ def prefict():
         })
     except:
         abort(422)
-    return {}
 
+# Pridiction Result route
 @app.route('/prediction_result')
 @login_required
 def prediction_result():
@@ -143,11 +148,15 @@ def dashboard():
 
     enquiries = Enquiry.query.order_by(db.desc(Enquiry.id)).all()
 
+    noti = Enquiry.query.filter_by(promoted=False).all()
+    numberOfnoti = len(noti)
+
     return render_template(
         'admin/index.html',
         current_page="Dashboard",
         user=user_data,
-        enquiries=enquiries)
+        enquiries=enquiries,
+        noti=numberOfnoti)
 
 
 # Confirm route
@@ -221,12 +230,7 @@ def not_found(error):
     return render_template(
         'error.html',
         error_code=404,
-        error_msg="The page you are looking for doesn't exist.")
-    return ({
-        "success": False,
-        "message": "resource not found",
-        "error": 404
-    }), 404
+        error_msg="The page you are looking for doesn't exist."),404
 
 
 if __name__ == '__main__':

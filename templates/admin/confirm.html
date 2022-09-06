@@ -35,9 +35,11 @@
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
               
-                  <h5 class="card-title">Personal Details</h5>
-                  
+                  <h5 class="card-title">Personal Details
+                    <sup>(<span  style="font-size: 12px;" id="e_id">{{enquiry.e_id}}</span>)</sup>
+                  </h5>
                   <div class="row">
+                    <div class="col-lg-3 col-md-4 label ">Full Name</div>
                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
                     <div class="col-lg-9 col-md-8" id="name">{{enquiry.name}}</div>
                   </div>
@@ -147,6 +149,7 @@
         $(document).ready(function(){
           $("#predict").on('click', function(e){
             e.preventDefault()
+            var e_id = $('#e_id').text()
             var name = $('#name').text()
             var int_learn = $('#int_learn').text()
             var fin_gain = $('#fin_gain').text()
@@ -161,6 +164,7 @@
 
             
             var request_data = {
+              e_id: e_id,
               name: name,
               int_learn: int_learn,
               cod_test_task: cod_test_task,
@@ -183,7 +187,6 @@
                $("#btn-txt").text("Sending data...")
               },
               success: function(res){
-                console.log(res)
                 $("#predict").addClass('btn-success')
                 $("#btn-txt").text("Predicting...")
                 setTimeout(()=>{

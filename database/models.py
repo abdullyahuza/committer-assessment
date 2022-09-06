@@ -1,5 +1,5 @@
 import os
-from sqlalchemy import Column, String, Integer, Float, Date
+from sqlalchemy import Column, String, Integer, Float, Date, Boolean
 from flask_sqlalchemy import SQLAlchemy
 from flask import json
 from werkzeug.security import generate_password_hash
@@ -51,6 +51,7 @@ def db_drop_and_create_all():
         cont_code_dec=3,
         dec_right_del=3,
         proj_age=5,
+        promoted=0,
         date_submitted=date.today()
     )
     db.session.add(enquirer)
@@ -96,11 +97,13 @@ class Enquiry(db.Model):
     cont_code_dec = Column(Float)
     dec_right_del = Column(Float)
     proj_age = Column(Integer)
+    promoted = Column(Boolean, default=0)
     date_submitted = Column(Date)
 
     def details(self):
 
         return {
+            'e_id': self.id,
             'name': self.name.capitalize(),
             'age': self.age,
             'education': self.education.capitalize(),
@@ -118,6 +121,7 @@ class Enquiry(db.Model):
             'cont_code_dec': self.cont_code_dec,
             'dec_right_del': self.dec_right_del,
             'proj_age': self.proj_age,
+            'promoted': self.promoted,
             'date_submitted': self.date_submitted
         }
 

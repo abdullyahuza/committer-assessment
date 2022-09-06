@@ -8,16 +8,25 @@
             <div class="card-body">
               <h5 class="card-title">Prediction Status</h5>
 
-              <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <i class="bi bi-check-circle me-1"></i>
-                A simple success alert with icon—check it out!
-              </div>
-
-              <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <i class="bi bi-exclamation-triangle me-1"></i>
-                A simple warning alert with icon—check it out!
-              </div>
-
+              {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                  {% for message in messages %}
+                    {% if message.type == 'success' %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                      <i class="bi bi-check-circle me-1"></i>
+                      {{message.msg}}
+                    </div>
+                    {% elif message.type == 'error' %}
+                    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                      <i class="bi bi-exclamation-triangle me-1"></i>
+                      {{message.msg}}
+                    </div>
+                    {% endif %}
+                  {% endfor %}
+                {% else %}
+                <script type="text/javascript">window.location.href = '/dashboard'</script>
+                {% endif %}
+              {% endwith %}
             </div>
           </div>
         </div>

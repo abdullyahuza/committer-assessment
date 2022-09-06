@@ -39,27 +39,27 @@
                   
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                    <div class="col-lg-9 col-md-8">{{enquiry.name}}</div>
+                    <div class="col-lg-9 col-md-8" id="name">{{enquiry.name}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Age</div>
-                    <div class="col-lg-9 col-md-8">{{enquiry.age}}</div>
+                    <div class="col-lg-9 col-md-8" id="age">{{enquiry.age}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Education</div>
-                    <div class="col-lg-9 col-md-8">{{enquiry.education}}</div>
+                    <div class="col-lg-9 col-md-8" id="education">{{enquiry.education}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Email</div>
-                    <div class="col-lg-9 col-md-8">{{enquiry.email}}</div>
+                    <div class="col-lg-9 col-md-8" id="email">{{enquiry.email}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label ">Region</div>
-                    <div class="col-lg-9 col-md-8">{{enquiry.region}}</div>
+                    <div class="col-lg-9 col-md-8" id="region">{{enquiry.region}}</div>
                   </div>
 
                 </div>
@@ -67,58 +67,58 @@
                 <div class="tab-pane fade show" id="prediction-data">
 
                   <div class="row">
-                    <div class="col-lg-6 col-md-4 label ">Financial Gain</div>
-                    <div class="col-lg-6 col-md-8">{{enquiry.fin_gain}}</div>
+                    <div class="col-lg-6 col-md-4 label">Financial Gain</div>
+                    <div class="col-lg-6 col-md-8" id="fin_gain">{{enquiry.fin_gain}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-6 col-md-4 label ">Intention to Learn</div>
-                    <div class="col-lg-6 col-md-8">{{enquiry.int_learn}}</div>
+                    <div class="col-lg-6 col-md-8" id="int_learn">{{enquiry.int_learn}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-6 col-md-4 label ">Developer Involvement</div>
-                    <div class="col-lg-6 col-md-8">{{enquiry.dev_inv}}</div>
+                    <div class="col-lg-6 col-md-8" id="dev_inv">{{enquiry.dev_inv}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-6 col-md-4 label ">Project Desertion</div>
-                    <div class="col-lg-6 col-md-8">{{enquiry.proj_desertion}}</div>
+                    <div class="col-lg-6 col-md-8" id="proj_desertion">{{enquiry.proj_desertion}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-6 col-md-4 label ">Development Status</div>
-                    <div class="col-lg-6 col-md-8">{{enquiry.dev_status}}</div>
+                    <div class="col-lg-6 col-md-8" id="dev_status">{{enquiry.dev_status}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-6 col-md-4 label ">Developer Experience</div>
-                    <div class="col-lg-6 col-md-8">{{enquiry.dev_experience}}</div>
+                    <div class="col-lg-6 col-md-8" id="dev_experience">{{enquiry.dev_experience}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-6 col-md-4 label ">System Integration</div>
-                    <div class="col-lg-6 col-md-8">{{enquiry.sys_int}}</div>
+                    <div class="col-lg-6 col-md-8" id="sys_int">{{enquiry.sys_int}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-6 col-md-4 label ">Technical norm</div>
-                    <div class="col-lg-6 col-md-8">{{enquiry.tech_norm}}</div>
+                    <div class="col-lg-6 col-md-8" id="tech_norm">{{enquiry.tech_norm}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-6 col-md-4 label ">Code Testing Task</div>
-                    <div class="col-lg-6 col-md-8">{{enquiry.code_test}}</div>
+                    <div class="col-lg-6 col-md-8" id="code_test">{{enquiry.code_test}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-6 col-md-4 label ">Continuous Code Decoupling</div>
-                    <div class="col-lg-6 col-md-8">{{enquiry.cont_code_dec}}</div>
+                    <div class="col-lg-6 col-md-8" id="cont_code_dec">{{enquiry.cont_code_dec}}</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-6 col-md-4 label ">Decision Right Delegation</div>
-                    <div class="col-lg-6 col-md-8">{{enquiry.dec_right_del}}</div>
+                    <div class="col-lg-6 col-md-8" id="dec_right_del">{{enquiry.dec_right_del}}</div>
                   </div>
                   
                   <div class="row">
@@ -147,46 +147,54 @@
         $(document).ready(function(){
           $("#predict").on('click', function(e){
             e.preventDefault()
-            // $("#spinner").addClass('spinner-grow spinner-grow-sm')
-            // $("#btn-txt").text("Sending data...")
-            // setTimeout(() => {
-            //   $("#btn-txt").text("Predicting...")
+            var name = $('#name').text()
+            var int_learn = $('#int_learn').text()
+            var fin_gain = $('#fin_gain').text()
+            var tech_cont_norm = $('#tech_norm').text()
+            var sys_int = $('#sys_int').text()
+            var cod_test_task = $('#code_test').text()
+            var cont_code_dec = $('#cont_code_dec').text()
+            var dec_right_del = $('#dec_right_del').text()
+            var dev_inv = $('#dev_inv').text()
+            var proj_desertion = $('#proj_desertion').text()
+            var dev_experience = $('#dev_experience').text()
 
-            // }, 2500);
+            
+            var request_data = {
+              name: name,
+              int_learn: int_learn,
+              cod_test_task: cod_test_task,
+              cont_code_dec: cont_code_dec,
+              dec_right_del: dec_right_del,
+              dev_experience: dev_experience,
+              dev_inv: dev_inv,
+              fin_gain: fin_gain,
+              proj_desertion: proj_desertion,
+              sys_int: sys_int,
+              tech_cont_norm: tech_cont_norm
+            }
 
-            // $.ajax({
-            //       url:"https://restcountries.com/v3.1/alll",
-            //       method:"get",
-            //       beforeSend: function(){
-            //        $("#spinner").addClass('spinner-grow spinner-grow-sm')
-            //        $("#btn-txt").text("Sending data...")
-            //       },
-            //       success: function(res){
-            //         console.log(res)
-            //         $("#btn-txt").text("Predicted...")
-            //       },
-            //       complete: function() {
-            //         setTimeout(()=>{
-            //           $("#btn-txt").text("Redirecting...")
-            //         },2000)
-            //       },
-            //       error: function(xhr, status, error){
-            //         $("#error").html(error)
-            //       }
+            $.ajax({
+              url:"/api",
+              method:"POST",
+              data: request_data,
+              beforeSend: function(){
+               $("#spinner").addClass('spinner-grow spinner-grow-sm')
+               $("#btn-txt").text("Sending data...")
+              },
+              success: function(res){
+                console.log(res)
+                $("#btn-txt").text("Predicting...")
+                setTimeout(()=>{
+                  $("#btn-txt").text("Redirecting...")
+                  window.location.href = res.redirect
+                },2000)
+              },
+              error: function(xhr, status, error){
+                $("#error").html(error)
+              }
                   
-            //  });
-
-            // $.ajax({
-            //   url: 'https://restcountries.com/v3.1/all',
-            //   method: 'get',
-            //   beforeSend: function() { 
-            //     $("#spinner").addClass('spinner-grow spinner-grow-sm')
-            //     $("#btn-txt").text("Sending data...")
-            //   },
-            //   complete: function() {
-            //     $("#btn-txt").text("Predicting...")
-            //   }
-            // });
+             });
 
           })
         })

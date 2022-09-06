@@ -8,6 +8,8 @@ from database.models import db, setup_db, db_drop_and_create_all, User, Enquiry
 from auth import login_required
 from werkzeug.security import check_password_hash
 from datetime import timedelta, date
+from Prediction_of_UserInput.prediction_file import Prediction_from_api
+from File_operation import file_op
 #----------------------------------------------------------------------------#
 # App Config.
 #----------------------------------------------------------------------------#
@@ -32,15 +34,50 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 setup_db(app)
 
-db_drop_and_create_all()
+# db_drop_and_create_all()
 
 #----------------------------------------------------------------------------#
 # App Routes.
 #----------------------------------------------------------------------------#
 
+# API route
+@app.route('/api', methods=['POST'])
+@login_required
+def prefict():
+    try:
+        name = request.form['name']
+        Int_Learn = float(request.form['int_learn'])
+        Fin_Gain = float(request.form['fin_gain'])
+        Tech_Cont_Norm = float(request.form['tech_cont_norm'])
+        Sys_Int = float(request.form['sys_int'])
+        Cod_Test_Task = float(request.form['cod_test_task'])
+        Cont_Code_Dec = float(request.form['cont_code_dec'])
+        Dec_Right_Del = float(request.form['dec_right_del'])
+        Dev_Inv = float(request.form['dev_inv'])
+        Proj_Desertion = float(request.form['proj_desertion'])
+        Dev_Experience = float(request.form['dev_experience'])
+
+        pred = Prediction_from_api(Int_Learn, Fin_Gain, Tech_Cont_Norm, Sys_Int, Cod_Test_Task, Cont_Code_Dec,Dec_Right_Del, Dev_Inv, Proj_Desertion, Dev_Experience)
+        pred_data = pred.prediction_api()
+        status = f"Congratulate {name}!! He is Promoted" if pred_data == 1 else f"Sorry {name}!! Not Promoted"
+        flash({'type': "success" if pred_data == 1 else "error", 'msg': status})
+        return jsonify({
+            'Name': name,
+            'status': status,
+            'redirect': url_for('prediction_result')
+        })
+    except:
+        abort(422)
+    return {}
+
+@app.route('/prediction_result')
+@login_required
+def prediction_result():
+    user = User.query.filter_by(username=session['user_id']).first()
+    user_data = user.details()
+    return render_template('admin/prediction_result.html', user=user_data, current_page="Prediction Status")
+
 # Home route
-
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == "POST":
@@ -104,7 +141,7 @@ def dashboard():
     user = User.query.filter_by(username=session['user_id']).first()
     user_data = user.details()
 
-    enquiries = Enquiry.query.all()
+    enquiries = Enquiry.query.order_by(db.desc(Enquiry.id)).all()
 
     return render_template(
         'admin/index.html',

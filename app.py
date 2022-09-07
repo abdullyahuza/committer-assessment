@@ -1,6 +1,7 @@
 #----------------------------------------------------------------------------#
 # Imports.
 #----------------------------------------------------------------------------#
+import os, csv
 from flask import Flask, request, render_template, redirect, url_for, flash, session, send_file, jsonify, abort
 from flask_session import Session
 from tempfile import mkdtemp
@@ -9,22 +10,21 @@ from auth import login_required
 from werkzeug.security import check_password_hash
 from datetime import timedelta, date
 from Prediction_of_UserInput.prediction_file import Prediction_from_api
+from Prediction_from_file.prediction_from_file import Prediction_from_file
 from File_operation import file_op
+from werkzeug.utils import secure_filename
+
 #----------------------------------------------------------------------------#
 # App Config.
 #----------------------------------------------------------------------------#
 app = Flask(__name__)
 
+UPLOAD_FOLDER = os.path.abspath(os.getcwd()) + '/Data/predict'
+ALLOWED_EXTENSIONS = {'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'}
+
 # Ensure templates are auto-reloaded
 app.config["TEMPLATES_AUTO_RELOAD"] = True
-
-# use session
-
-
-@app.before_first_request  # runs before FIRST request (only once)
-def make_session_permanent():
-    session.permanent = True
-    app.permanent_session_lifetime = timedelta(minutes=10)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 
 # Configure session to use filesystem (instead of signed cookies)
@@ -36,9 +36,51 @@ setup_db(app)
 
 # db_drop_and_create_all()
 
+# use session
+@app.before_first_request  # runs before FIRST request (only once)
+def make_session_permanent():
+    session.permanent = True
+    app.permanent_session_lifetime = timedelta(minutes=10)
+print(UPLOAD_FOLDER)
 #----------------------------------------------------------------------------#
 # App Routes.
 #----------------------------------------------------------------------------#
+
+# File_prediction route
+@app.route('/from_file', methods=['GET','POST'])
+@login_required
+def from_file():
+    if request.method == 'POST':
+        try:
+            if request.files:
+                file = request.files['fromFile']
+                file.filename = "testfile.csv"
+                filepath = os.path.join(UPLOAD_FOLDER, file.filename)
+                file.save(filepath)
+                # read the file
+                with open(filepath) as f:
+                    csv_file = csv.reader(f)
+                    data = [row for row in csv_file]
+                    del data[0]
+                IDs = [d[0] for d in data]
+                pred = Prediction_from_file(filepath)
+                predictions = pred.prediction_file_api()
+                predictions = [int(p) for p in predictions]
+
+                response_dic = dict(zip(IDs, predictions))
+                return jsonify(response_dic)
+        except:
+            abort(422)
+
+    user = User.query.filter_by(username=session['user_id']).first()
+    user_data = user.details()
+    noti = Enquiry.query.filter_by(promoted=False).all()
+    numberOfnoti = len(noti)
+
+    return render_template(
+        'admin/upload.html',
+        current_page="Prediction from file",
+        user=user_data, noti=numberOfnoti)
 
 # API route
 @app.route('/api', methods=['POST'])
@@ -80,7 +122,9 @@ def prefict():
 def prediction_result():
     user = User.query.filter_by(username=session['user_id']).first()
     user_data = user.details()
-    return render_template('admin/prediction_result.html', user=user_data, current_page="Prediction Status")
+    noti = Enquiry.query.filter_by(promoted=False).all()
+    numberOfnoti = len(noti)
+    return render_template('admin/prediction_result.html', user=user_data, current_page="Prediction Status", noti=numberOfnoti)
 
 # Home route
 @app.route('/', methods=['GET', 'POST'])
@@ -167,22 +211,13 @@ def confirm(e_id):
     user_data = user.details()
 
     e_query = Enquiry.query.get(e_id)
+    noti = Enquiry.query.filter_by(promoted=False).all()
+    numberOfnoti = len(noti)
 
     return render_template(
         'admin/confirm.html',
         current_page="Confirm Data",
-        user=user_data, enquiry=e_query.details())
-
-# File_prediction route
-@app.route('/from_file')
-@login_required
-def from_file():
-    user = User.query.filter_by(username=session['user_id']).first()
-    user_data = user.details()
-    return render_template(
-        'admin/upload.html',
-        current_page="Prediction from file",
-        user=user_data)
+        user=user_data, enquiry=e_query.details(), noti=numberOfnoti)
 
 # Prediction result route
 @app.route('/status')
@@ -190,11 +225,12 @@ def from_file():
 def status():
     user = User.query.filter_by(username=session['user_id']).first()
     user_data = user.details()
-
+    noti = Enquiry.query.filter_by(promoted=False).all()
+    numberOfnoti = len(noti)
     return render_template(
         'admin/prediction_result.html',
         current_page="Prediction Status",
-        user=user_data)
+        user=user_data, noti=numberOfnoti)
 
 # Prediction result route
 @app.route('/status-file')
@@ -203,14 +239,16 @@ def status_file():
     user = User.query.filter_by(username=session['user_id']).first()
     user_data = user.details()
 
+    noti = Enquiry.query.filter_by(promoted=False).all()
+    numberOfnoti = len(noti)
+
     return render_template(
         'admin/prediction_result_file.html',
         current_page="File Prediction Status",
-        user=user_data)
+        user=user_data, noti=numberOfnoti)
+
 
 # logout route
-
-
 @app.route('/logout')
 @login_required
 def logout():
@@ -218,8 +256,6 @@ def logout():
     return redirect('/lead')
 
 # logout route
-
-
 @app.route('/error')
 def error():
     return render_template('error.html')

@@ -10475,3 +10475,822 @@
   -0.5056593 ]
  [-1.28070555 -0.52326904 -0.15882452 ... -1.3092281   1.23677842
   -1.22098221]]
+2022-09-07/09:57:21		Start of Prediction of api....
+2022-09-07/09:57:21		column(s) has been removed
+2022-09-07/09:57:21		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  ...  Dev_Inv  Proj_Desertion  Dev_Experience  Dec_Right_Dec
+0       6.00      6.00            6.00     6.00  ...      6.0             5.0             5.0            NaN
+0       6.00      5.00            4.67     5.50  ...      4.0             7.0             1.0            4.2
+1       5.67      4.75            4.50     4.75  ...      6.2             2.4             5.0            3.6
+2       6.67      6.50            4.83     6.00  ...      6.8             4.0             1.0            3.6
+3       5.67      5.75            5.33     6.50  ...      7.0             1.4             1.0            2.2
+
+[5 rows x 11 columns]
+2022-09-07/09:57:21		Entered the load_model method of the File_operation class
+2022-09-07/09:57:21		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/09:57:22		Input data for model: [[ 0.36177382  0.44282532  1.7510099  ...  0.73103669  0.56076769
+   1.62765191]
+ [ 0.36177382 -0.33351328  0.03739417 ... -0.97864589  1.90290768
+  -1.21869414]
+ [ 0.08826424 -0.52759793 -0.18163942 ...  0.90200495 -1.1840143
+   1.62765191]
+ ...
+ [ 0.08826424 -0.33351328  0.46257702 ...  0.21813192 -0.37873031
+  -1.21869414]
+ [-0.19353351 -1.10985187  0.03739417 ... -0.1238046   1.23183768
+  -0.50710763]
+ [-1.29586001 -0.52759793 -0.18163942 ... -1.32058241  1.23183768
+  -1.21869414]]
+2022-09-07/09:58:23		Start of Prediction of api....
+2022-09-07/09:58:23		column(s) has been removed
+2022-09-07/09:58:23		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  ...  Dev_Inv  Proj_Desertion  Dev_Experience  Dec_Right_Dec
+0       6.00      6.00            6.00     6.00  ...      6.0             5.0             5.0            NaN
+0       6.00      5.00            4.67     5.50  ...      4.0             7.0             1.0            4.2
+1       5.67      4.75            4.50     4.75  ...      6.2             2.4             5.0            3.6
+2       6.67      6.50            4.83     6.00  ...      6.8             4.0             1.0            3.6
+3       5.67      5.75            5.33     6.50  ...      7.0             1.4             1.0            2.2
+
+[5 rows x 11 columns]
+2022-09-07/09:58:23		Entered the load_model method of the File_operation class
+2022-09-07/09:58:23		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/09:58:24		Input data for model: [[ 0.36177382  0.44282532  1.7510099  ...  0.73103669  0.56076769
+   1.62765191]
+ [ 0.36177382 -0.33351328  0.03739417 ... -0.97864589  1.90290768
+  -1.21869414]
+ [ 0.08826424 -0.52759793 -0.18163942 ...  0.90200495 -1.1840143
+   1.62765191]
+ ...
+ [ 0.08826424 -0.33351328  0.46257702 ...  0.21813192 -0.37873031
+  -1.21869414]
+ [-0.19353351 -1.10985187  0.03739417 ... -0.1238046   1.23183768
+  -0.50710763]
+ [-1.29586001 -0.52759793 -0.18163942 ... -1.32058241  1.23183768
+  -1.21869414]]
+2022-09-07/09:58:43		Start of Prediction of api....
+2022-09-07/09:58:43		column(s) has been removed
+2022-09-07/09:58:43		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  ...  Dev_Inv  Proj_Desertion  Dev_Experience  Dec_Right_Dec
+0       6.00      6.00            6.00     6.00  ...      6.0             2.0             4.0            NaN
+0       6.00      5.00            4.67     5.50  ...      4.0             7.0             1.0            4.2
+1       5.67      4.75            4.50     4.75  ...      6.2             2.4             5.0            3.6
+2       6.67      6.50            4.83     6.00  ...      6.8             4.0             1.0            3.6
+3       5.67      5.75            5.33     6.50  ...      7.0             1.4             1.0            2.2
+
+[5 rows x 11 columns]
+2022-09-07/09:58:43		Entered the load_model method of the File_operation class
+2022-09-07/09:58:43		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/09:58:43		Input data for model: [[ 0.36177382  0.44282532  1.7510099  ...  0.73103669 -1.43359152
+   0.92498652]
+ [ 0.36177382 -0.33351328  0.03739417 ... -0.97864589  1.90480414
+  -1.22098221]
+ [ 0.08826424 -0.52759793 -0.18163942 ...  0.90200495 -1.16651986
+   1.64030943]
+ ...
+ [ 0.08826424 -0.33351328  0.46257702 ...  0.21813192 -0.3653049
+  -1.22098221]
+ [-0.19353351 -1.10985187  0.03739417 ... -0.1238046   1.23712501
+  -0.5056593 ]
+ [-1.29586001 -0.52759793 -0.18163942 ... -1.32058241  1.23712501
+  -1.22098221]]
+2022-09-07/10:07:37		Start of Prediction of api....
+2022-09-07/10:07:37		column(s) has been removed
+2022-09-07/10:07:38		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  ...  Dev_Inv  Proj_Desertion  Dev_Experience  Dec_Right_Dec
+0       6.00      6.00            6.00     6.00  ...      6.0             6.0             4.0            NaN
+0       6.00      5.00            4.67     5.50  ...      4.0             7.0             1.0            4.2
+1       5.67      4.75            4.50     4.75  ...      6.2             2.4             5.0            3.6
+2       6.67      6.50            4.83     6.00  ...      6.8             4.0             1.0            3.6
+3       5.67      5.75            5.33     6.50  ...      7.0             1.4             1.0            2.2
+
+[5 rows x 11 columns]
+2022-09-07/10:07:38		Entered the load_model method of the File_operation class
+2022-09-07/10:07:38		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/10:07:38		Input data for model: [[ 0.36177382  0.44282532  1.7510099  ...  0.73103669  1.22376701
+   0.92498652]
+ [ 0.36177382 -0.33351328  0.03739417 ... -0.97864589  1.89253415
+  -1.22098221]
+ [ 0.08826424 -0.52759793 -0.18163942 ...  0.90200495 -1.18379472
+   1.64030943]
+ ...
+ [ 0.08826424 -0.33351328  0.46257702 ...  0.21813192 -0.38127414
+  -1.22098221]
+ [-0.19353351 -1.10985187  0.03739417 ... -0.1238046   1.22376701
+  -0.5056593 ]
+ [-1.29586001 -0.52759793 -0.18163942 ... -1.32058241  1.22376701
+  -1.22098221]]
+2022-09-07/10:09:39		Start of Prediction of api....
+2022-09-07/10:09:39		column(s) has been removed
+2022-09-07/10:09:39		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  ...  Dev_Inv  Proj_Desertion  Dev_Experience  Dec_Right_Dec
+0       6.00      6.00            6.00     6.00  ...      6.0             2.0             4.0            NaN
+0       6.00      5.00            4.67     5.50  ...      4.0             7.0             1.0            4.2
+1       5.67      4.75            4.50     4.75  ...      6.2             2.4             5.0            3.6
+2       6.67      6.50            4.83     6.00  ...      6.8             4.0             1.0            3.6
+3       5.67      5.75            5.33     6.50  ...      7.0             1.4             1.0            2.2
+
+[5 rows x 11 columns]
+2022-09-07/10:09:39		Entered the load_model method of the File_operation class
+2022-09-07/10:09:39		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/10:09:39		Input data for model: [[ 0.36177382  0.44282532  1.7510099  ...  0.73103669 -1.43359152
+   0.92498652]
+ [ 0.36177382 -0.33351328  0.03739417 ... -0.97864589  1.90480414
+  -1.22098221]
+ [ 0.08826424 -0.52759793 -0.18163942 ...  0.90200495 -1.16651986
+   1.64030943]
+ ...
+ [ 0.08826424 -0.33351328  0.46257702 ...  0.21813192 -0.3653049
+  -1.22098221]
+ [-0.19353351 -1.10985187  0.03739417 ... -0.1238046   1.23712501
+  -0.5056593 ]
+ [-1.29586001 -0.52759793 -0.18163942 ... -1.32058241  1.23712501
+  -1.22098221]]
+2022-09-07/12:10:36		Start of Prediction of api....
+2022-09-07/12:11:08		Start of Prediction of api....
+2022-09-07/12:14:02		Start of Prediction of api....
+2022-09-07/12:14:02		column(s) has been removed
+2022-09-07/12:15:17		Start of Prediction of api....
+2022-09-07/12:15:17		column(s) has been removed
+2022-09-07/12:23:55		Start of Prediction of api....
+2022-09-07/12:23:55		column(s) has been removed
+2022-09-07/12:23:55		column(s) has been removed
+2022-09-07/12:23:55		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0        <1 year
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4      4–5 years
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0        <1 year
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4        <1 year
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8      1–2 years
+2022-09-07/12:26:02		Start of Prediction of api....
+2022-09-07/12:26:02		column(s) has been removed
+2022-09-07/12:26:02		column(s) has been removed
+2022-09-07/12:26:02		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:26:43		Start of Prediction of api....
+2022-09-07/12:26:43		column(s) has been removed
+2022-09-07/12:26:43		column(s) has been removed
+2022-09-07/12:26:43		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:26:43		Entered the load_model method of the File_operation class
+2022-09-07/12:26:43		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:28:10		Start of Prediction of api....
+2022-09-07/12:28:10		column(s) has been removed
+2022-09-07/12:28:10		column(s) has been removed
+2022-09-07/12:28:10		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:28:10		Entered the load_model method of the File_operation class
+2022-09-07/12:28:10		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:31:09		Start of Prediction of api....
+2022-09-07/12:31:09		column(s) has been removed
+2022-09-07/12:31:09		column(s) has been removed
+2022-09-07/12:31:10		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:31:10		Entered the load_model method of the File_operation class
+2022-09-07/12:31:10		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:31:10		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/12:34:10		Start of Prediction of api....
+2022-09-07/12:34:10		column(s) has been removed
+2022-09-07/12:34:10		column(s) has been removed
+2022-09-07/12:34:10		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:34:10		Entered the load_model method of the File_operation class
+2022-09-07/12:34:10		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:34:11		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/12:35:01		Start of Prediction of api....
+2022-09-07/12:35:01		column(s) has been removed
+2022-09-07/12:35:01		column(s) has been removed
+2022-09-07/12:35:02		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:35:02		Entered the load_model method of the File_operation class
+2022-09-07/12:35:02		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:35:02		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/12:36:30		Start of Prediction of api....
+2022-09-07/12:36:30		column(s) has been removed
+2022-09-07/12:36:30		column(s) has been removed
+2022-09-07/12:36:30		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:36:30		Entered the load_model method of the File_operation class
+2022-09-07/12:36:30		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:36:31		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/12:38:42		Start of Prediction of api....
+2022-09-07/12:38:42		column(s) has been removed
+2022-09-07/12:38:42		column(s) has been removed
+2022-09-07/12:38:42		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:38:42		Entered the load_model method of the File_operation class
+2022-09-07/12:38:42		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:38:43		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/12:40:58		Start of Prediction of api....
+2022-09-07/12:40:58		column(s) has been removed
+2022-09-07/12:40:58		column(s) has been removed
+2022-09-07/12:40:58		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:40:58		Entered the load_model method of the File_operation class
+2022-09-07/12:40:58		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:40:59		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/12:42:06		Start of Prediction of api....
+2022-09-07/12:42:06		column(s) has been removed
+2022-09-07/12:42:06		column(s) has been removed
+2022-09-07/12:42:06		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:42:06		Entered the load_model method of the File_operation class
+2022-09-07/12:42:06		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:42:06		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/12:45:40		Start of Prediction of api....
+2022-09-07/12:45:40		column(s) has been removed
+2022-09-07/12:45:40		column(s) has been removed
+2022-09-07/12:45:40		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:45:40		Entered the load_model method of the File_operation class
+2022-09-07/12:45:40		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:45:40		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/12:46:32		Start of Prediction of api....
+2022-09-07/12:46:32		column(s) has been removed
+2022-09-07/12:46:32		column(s) has been removed
+2022-09-07/12:46:32		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:46:32		Entered the load_model method of the File_operation class
+2022-09-07/12:46:32		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:46:33		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/12:47:54		Start of Prediction of api....
+2022-09-07/12:47:54		column(s) has been removed
+2022-09-07/12:47:54		column(s) has been removed
+2022-09-07/12:47:54		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:47:54		Entered the load_model method of the File_operation class
+2022-09-07/12:47:54		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:47:54		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/12:49:35		Start of Prediction of api....
+2022-09-07/12:49:35		column(s) has been removed
+2022-09-07/12:49:35		column(s) has been removed
+2022-09-07/12:49:35		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:49:35		Entered the load_model method of the File_operation class
+2022-09-07/12:49:35		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:49:36		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/12:52:58		Start of Prediction of api....
+2022-09-07/12:52:58		column(s) has been removed
+2022-09-07/12:52:58		column(s) has been removed
+2022-09-07/12:52:58		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:52:58		Entered the load_model method of the File_operation class
+2022-09-07/12:52:58		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:52:58		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/12:54:31		Start of Prediction of api....
+2022-09-07/12:54:31		column(s) has been removed
+2022-09-07/12:54:31		column(s) has been removed
+2022-09-07/12:54:31		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/12:54:31		Entered the load_model method of the File_operation class
+2022-09-07/12:54:31		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/12:54:31		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/13:13:30		Start of Prediction of api....
+2022-09-07/13:13:30		column(s) has been removed
+2022-09-07/13:13:30		column(s) has been removed
+2022-09-07/13:13:30		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/13:13:30		Entered the load_model method of the File_operation class
+2022-09-07/13:13:30		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/13:13:31		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/13:15:20		Start of Prediction of api....
+2022-09-07/13:15:20		column(s) has been removed
+2022-09-07/13:15:20		column(s) has been removed
+2022-09-07/13:15:20		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/13:15:20		Entered the load_model method of the File_operation class
+2022-09-07/13:15:20		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/13:15:20		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/13:16:39		Start of Prediction of api....
+2022-09-07/13:16:39		column(s) has been removed
+2022-09-07/13:16:39		column(s) has been removed
+2022-09-07/13:16:40		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/13:16:40		Entered the load_model method of the File_operation class
+2022-09-07/13:16:40		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/13:16:40		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/13:25:32		Start of Prediction of api....
+2022-09-07/13:25:32		column(s) has been removed
+2022-09-07/13:25:32		column(s) has been removed
+2022-09-07/13:25:32		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/13:25:32		Entered the load_model method of the File_operation class
+2022-09-07/13:25:32		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/13:25:33		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/13:33:22		Start of Prediction of api....
+2022-09-07/13:33:22		column(s) has been removed
+2022-09-07/13:33:22		column(s) has been removed
+2022-09-07/13:33:22		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/13:33:22		Entered the load_model method of the File_operation class
+2022-09-07/13:33:22		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/13:33:23		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/13:40:06		Start of Prediction of api....
+2022-09-07/13:40:06		column(s) has been removed
+2022-09-07/13:40:06		column(s) has been removed
+2022-09-07/13:40:06		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/13:40:07		Entered the load_model method of the File_operation class
+2022-09-07/13:40:07		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/13:40:07		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/13:40:54		Start of Prediction of api....
+2022-09-07/13:40:54		column(s) has been removed
+2022-09-07/13:40:54		column(s) has been removed
+2022-09-07/13:40:54		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/13:40:54		Entered the load_model method of the File_operation class
+2022-09-07/13:40:54		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/13:40:54		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/13:41:41		Start of Prediction of api....
+2022-09-07/13:41:41		column(s) has been removed
+2022-09-07/13:41:41		column(s) has been removed
+2022-09-07/13:41:41		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/13:41:41		Entered the load_model method of the File_operation class
+2022-09-07/13:41:41		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/13:41:41		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/13:43:17		Start of Prediction of api....
+2022-09-07/13:43:17		column(s) has been removed
+2022-09-07/13:43:17		column(s) has been removed
+2022-09-07/13:43:17		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/13:43:17		Entered the load_model method of the File_operation class
+2022-09-07/13:43:17		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/13:43:18		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/13:44:08		Start of Prediction of api....
+2022-09-07/13:44:08		column(s) has been removed
+2022-09-07/13:44:08		column(s) has been removed
+2022-09-07/13:44:08		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/13:44:08		Entered the load_model method of the File_operation class
+2022-09-07/13:44:08		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/13:44:09		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/13:46:26		Start of Prediction of api....
+2022-09-07/13:46:26		column(s) has been removed
+2022-09-07/13:46:26		column(s) has been removed
+2022-09-07/13:46:26		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/13:46:26		Entered the load_model method of the File_operation class
+2022-09-07/13:46:26		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/13:46:27		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/13:46:37		Start of Prediction of api....
+2022-09-07/13:46:37		column(s) has been removed
+2022-09-07/13:46:37		column(s) has been removed
+2022-09-07/13:46:37		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/13:46:37		Entered the load_model method of the File_operation class
+2022-09-07/13:46:37		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/13:46:37		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/13:46:59		Start of Prediction of api....
+2022-09-07/13:46:59		column(s) has been removed
+2022-09-07/13:46:59		column(s) has been removed
+2022-09-07/13:46:59		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/13:46:59		Entered the load_model method of the File_operation class
+2022-09-07/13:46:59		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/13:46:59		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]
+2022-09-07/13:48:40		Start of Prediction of api....
+2022-09-07/13:48:40		column(s) has been removed
+2022-09-07/13:48:40		column(s) has been removed
+2022-09-07/13:48:40		datafor ML:    Int_Learn  Fin_Gain  Tech_Cont_Norm  Sys_Int  Cod_Test_Task  Cont_Code_Dec  Dec_Right_Dec  Dev_Inv  Proj_Desertion  Dev_Experience
+0       6.00      5.00            4.67     5.50            4.8            3.8            4.2      4.0             7.0               1
+1       5.67      4.75            4.50     4.75            4.6            4.0            3.6      6.2             2.4               5
+2       6.67      6.50            4.83     6.00            6.2            5.4            3.6      6.8             4.0               1
+3       5.67      5.75            5.33     6.50            3.8            1.8            2.2      7.0             1.4               1
+4       5.00      5.50            4.67     5.00            4.2            3.2            4.2      4.4             3.8               2
+2022-09-07/13:48:40		Entered the load_model method of the File_operation class
+2022-09-07/13:48:40		Model File FinalXGBModel loaded. Exited the load_model method of the Model_Finder class
+2022-09-07/13:48:41		Input data for model: [[ 0.37469399 -0.30548744  0.05912471 ... -0.90683188  1.86781977
+  -1.19745682]
+ [ 0.10336386 -0.49654832 -0.15865129 ...  0.88711814 -1.16503265
+   1.64211506]
+ [ 0.92557638  0.8408778   0.26409035 ...  1.37637724 -0.11012746
+  -1.19745682]
+ ...
+ [ 0.10336386 -0.30548744  0.48186635 ...  0.23477268 -0.37385376
+  -1.19745682]
+ [-0.1761884  -1.06973094  0.05912471 ... -0.09140005  1.20850402
+  -0.48756385]
+ [-1.26973105 -0.49654832 -0.15865129 ... -1.23300461  1.20850402
+  -1.19745682]]

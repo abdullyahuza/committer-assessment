@@ -1,0 +1,10 @@
+"Dev_ID","Geographic_Regions","Int_Learn","Fin_Gain","Expt_Het","Tech_Cont_Norm","Sys_Int","Cod_Test_Task","Cont_Code_Dec","Dec_Right_Dec","Dev_Inv","Proj_Desertion","Project_Age","Dev_Status","Gender","Age","Education","Dev_Experience"
+1001,"Asia",6,5,2,4.67,5.5,4.8,3.8,4.2,4,7,"<1 year","Planning","M","30–39","Doctorate",1
+1002,"North America",5.67,4.75,2.33,4.5,4.75,4.6,4,3.6,6.2,2.4,"2-3 years","Alpha","F","40–49","Doctorate",5
+1003,"Caribbean",6.67,6.5,1,4.83,6,6.2,5.4,3.6,6.8,4,"<1 year","Pre-alpha","F","30–39","Masters",1
+1004,"Central America",5.67,5.75,1.33,5.33,6.5,3.8,1.8,2.2,7,1.4,"<1 year","Planning","M","30–39","Masters",1
+1005,"Europe",5,5.5,2.33,4.67,5,4.2,3.2,4.2,4.4,3.8,"1-2 years","Pre-alpha","M","30–39","Doctorate",2
+1006,"North America",5.67,6.5,1.33,5.17,6.25,4.4,4.4,3,4.4,6,"4-5 years","Stable Maturity","F","30–39","Bachelors",1
+1007,"Oceania",2,2,6,3.67,2.75,2,2.4,3.2,1.2,5.8,"1-2 years","Pre-alpha","M","30–39","Doctorate",3
+1008,"South America",4.33,2.5,5,2.17,2,1.6,1.2,1.6,1.8,6.2,"2-3 years","Planning","M","30–39","Doctorate",3
+1009,"Asia",6,5.5,2.33,5,5.25,4.6,4.4,4.6,5.4,2.2,"3-4 years","Beta","F","40–49","Doctorate",5

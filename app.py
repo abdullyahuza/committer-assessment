@@ -54,7 +54,7 @@ def from_file():
         try:
             if request.files:
                 file = request.files['fromFile']
-                file.filename = "testfile.csv"
+                file.filename = "predictionfile.csv"
                 filepath = os.path.join(UPLOAD_FOLDER, file.filename)
                 file.save(filepath)
                 # read the file

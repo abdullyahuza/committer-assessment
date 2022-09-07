@@ -67,9 +67,13 @@ def from_file():
                 predictions = pred.prediction_file_api()
                 predictions = [int(p) for p in predictions]
 
-                response_dic = dict(zip(IDs, predictions))
-                flash({'type': "success", 'msg': response_dic})
-                return redirect(url_for('prediction_result_file'))
+                flash({'type': "success", 'msg': dict(zip(IDs, predictions))})
+                response_dic = {}
+                response_dic['ids_preds'] = dict(zip(IDs, predictions))
+
+                # return redirect(url_for('prediction_result_file'))
+                response_dic['redirect'] = url_for('prediction_result_file')
+                return jsonify(response_dic)
         except:
             abort(422)
 

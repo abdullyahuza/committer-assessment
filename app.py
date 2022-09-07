@@ -54,7 +54,7 @@ def from_file():
         try:
             if request.files:
                 file = request.files['fromFile']
-                file.filename = "predictionfile.csv"
+                file.filename = "prediction_file.csv"
                 filepath = os.path.join(UPLOAD_FOLDER, file.filename)
                 file.save(filepath)
                 # read the file
@@ -68,7 +68,8 @@ def from_file():
                 predictions = [int(p) for p in predictions]
 
                 response_dic = dict(zip(IDs, predictions))
-                return jsonify(response_dic)
+                flash({'type': "success", 'msg': response_dic})
+                return redirect(url_for('prediction_result_file'))
         except:
             abort(422)
 
@@ -115,6 +116,16 @@ def prefict():
         })
     except:
         abort(422)
+
+# Pridiction Result route
+@app.route('/prediction_result_file')
+@login_required
+def prediction_result_file():
+    user = User.query.filter_by(username=session['user_id']).first()
+    user_data = user.details()
+    noti = Enquiry.query.filter_by(promoted=False).all()
+    numberOfnoti = len(noti)
+    return render_template('admin/prediction_result_file.html', user=user_data, current_page="Prediction Status", noti=numberOfnoti)
 
 # Pridiction Result route
 @app.route('/prediction_result')

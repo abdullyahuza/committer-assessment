@@ -29,7 +29,7 @@ def db_drop_and_create_all():
         username="abdullyahuza",
         name="Abdull Yahuza",
         email="yahuzaabdulrazak@gmail.com",
-        password=generate_password_hash("codediam")
+        password=generate_password_hash("adminpass")
     )
     db.session.add(admin)
 

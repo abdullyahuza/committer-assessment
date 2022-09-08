@@ -172,13 +172,12 @@ def index():
         return redirect('/#form')
     return render_template('index.html')
 
-# Dashboard route
-
-
+#login route
 @app.route('/lead', methods=['GET', 'POST'])
 def login():
     if session.get("user_id"):
         return redirect(url_for("dashboard"))
+    
     # Forget any user_id
     # session.clear()
 
@@ -275,7 +274,7 @@ def logout():
 def error():
     return render_template('error.html')
 
-
+# 404 error handler
 @app.errorhandler(404)
 def not_found(error):
     return render_template(

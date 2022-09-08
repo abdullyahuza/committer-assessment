@@ -45,9 +45,11 @@
              $("#btn-txt").text("Sending file...")
             },
             success: function(res){
+                $("#predict").removeClass('btn-primary')
               $("#predict").addClass('btn-success')
               $("#btn-txt").text("Predicting data...")
               setTimeout(()=>{
+                $("#predict").removeClass('btn-success')
                 $("#predict").addClass('btn-info')
                 $("#btn-txt").text("Redirecting...")
                 window.location.href = res.redirect

@@ -45,9 +45,11 @@
              $("#btn-txt").text("Sending file...")
             },
             success: function(res){
+              setTimeout(()=>{
                 $("#predict").removeClass('btn-primary')
-              $("#predict").addClass('btn-success')
-              $("#btn-txt").text("Predicting data...")
+                $("#predict").addClass('btn-success')
+                $("#btn-txt").text("Predicting data...")
+              },1000)
               setTimeout(()=>{
                 $("#predict").removeClass('btn-success')
                 $("#predict").addClass('btn-info')

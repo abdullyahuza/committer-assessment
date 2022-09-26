@@ -27,7 +27,7 @@
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto my-2 my-lg-0">
                         <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#form">Submit The Form</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#form">Submit The Survey</a></li>
                         <li class="nav-item"><a class="nav-link" href="/lead">
                             login
                         </a></li>
@@ -83,7 +83,7 @@
 
                     </div>
                 </div>
-                <form method="POST">
+                <!-- <form method="POST">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating mb-3">
@@ -277,7 +277,54 @@
                         </div>
                     </div>
 
-                </form>
+                </form> -->
+                <div class="survey">
+                    <div class="quiz-container" id="quiz">
+                      <div class="quiz-header">
+                        <h2 id="question">Question text</h2>
+                        <ul>
+                          <li>
+                            
+                            <label for="1" id="one_text">
+                                <input type="radio" name="answer" id="one" class="answer"> Strongly Disagree
+                            </label>
+                          </li>
+
+                          <li>
+                            <input type="radio" name="answer" id="two" class="answer">
+                            <label for="2" id="two_text">Somewhat Disagree</label>
+                          </li>
+
+                          <li>
+                            <input type="radio" name="answer" id="three" class="answer">
+                            <label for="3" id="three_text">Slightly Disagree</label>
+                          </li>
+
+                          <li>
+                            <input type="radio" name="answer" id="four" class="answer">
+                            <label for="4" id="four_text">Undecided</label>
+                          </li>
+
+                           <li>
+                            <input type="radio" name="answer" id="five" class="answer">
+                            <label for="5" id="five_text">Slightly Agree</label>
+                          </li>
+
+                           <li>
+                            <input type="radio" name="answer" id="six" class="answer">
+                            <label for="6" id="six_text">Somewhat Agree</label>
+                          </li>
+
+                           <li>
+                            <input type="radio" name="answer" id="seven" class="answer">
+                            <label for="7" id="seven_text">Strongly Agree</label>
+                          </li>
+                        </ul>
+                      </div>
+                      <button id="submit">Submit</button>
+                    </div>
+                </div>
+
             </div>
         </section>
         
@@ -287,5 +334,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
         <script src="static/js/scripts.js"></script>
+        <script src="static/js/survey.js"></script>
     </body>
 </html>

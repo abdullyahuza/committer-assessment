@@ -11458,12 +11458,12 @@ header.masthead h1, header.masthead .h1 {
 }
 
 .survey {
-  background-color: #b8c6db;
-  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 100%);
+  /*background-color: #b8c6db;*/
+  background-image: linear-gradient(250deg, #e9edf4 0%, #f5f7fa 10%);
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
   margin: 0;
 }
@@ -11477,7 +11477,7 @@ header.masthead h1, header.masthead .h1 {
 }
 
 .quiz-container .quiz-header {
-  padding: 2rem;
+  padding: 1rem;
 }
 
 .quiz-container h2 {
@@ -11494,7 +11494,7 @@ header.masthead h1, header.masthead .h1 {
 
 .quiz-container ul li {
   font-size: 1rem;
-  margin: .5rem 0;
+  margin: .7rem 1.2rem;
 }
 
 .quiz-container ul li label {

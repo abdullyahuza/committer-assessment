@@ -160,6 +160,7 @@ const quiz = document.getElementById('quiz')
 const answerEls = document.querySelectorAll('.answer')
 const questionEl = document.getElementById('question')
 const submitBtn = document.getElementById('submit')
+const errorElem = document.getElementById('error')
 
 let currentKey = 0
 let currentCat = quizData[quizKeys[currentKey]]
@@ -193,7 +194,6 @@ function loadQuiz() {
 
     const currentQuizData = currentCat[currentQuiz]
 
-    console.log(currentQuizData)
 
     questionEl.innerText = currentQuizData.question
     
@@ -204,25 +204,84 @@ function deselectAnswers() {
 }
 
 function getSelected() {
-    
+    let answer
+
+    answerEls.forEach(answerEl => {
+        if(answerEl.checked) {
+            answer = answerEl.id
+        }
+    })
+
+    return answer
 }
 
 submitBtn.addEventListener('click', () => {
-    // go to the next question
-    currentQuiz++;
+    const answer = getSelected()
+    console.log(answer)    
+    //set error elem display to none
+    errorElem.style.display = 'none';
 
-    if(currentQuiz < currentCat.length) {
-        loadQuiz()
+    //if question is answered get the next question
+    if(answer == undefined){
+        // go to the next question
+        currentQuiz++;
+
+        if(currentQuiz < currentCat.length) {
+            loadQuiz()
+        }
+        else
+        {
+            currentKey++;
+            //reset currentQuiz
+            if(currentKey < quizKeys.length){
+                currentQuiz = 0
+
+                //set current cat to next cat
+                currentCat = quizData[quizKeys[currentKey]]
+                loadQuiz()
+            }
+            else
+            {
+                //last cat
+                if(currentQuiz === currentCat.length){
+                    //do something
+                    let form = `
+                    <form>
+                        <h4 style="text-align: center;">Enter your Name & Email Address</h4>
+                        <br/>
+                        <div class="row">
+                            <div class="col-md-6" style="margin: 0 auto;">
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="name" name="name" type="text" placeholder="Enter your name..." required />
+                                    <label for="name">Full name</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">A name is required.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6" style="margin: 0 auto;">
+                                <div class="form-floating mb-3">
+                                    <input class="form-control" id="email" name="email" type="email" placeholder="Email Address..." required />
+                                    <label for="email">Email</label>
+                                    <div class="invalid-feedback" data-sb-feedback="name:required">Email.</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row gx-4 gx-lg-5 justify-content-center mt-5 mb-5">
+                            <div class="col-lg-6">
+                                <div class="d-grid"><button class="btn btn-success btn-xl" id="submitButton" type="submit">Submit</button></div>
+                            </div>
+                        </div>
+                    </form>
+                    `
+                    document.getElementById('details-form').innerHTML = form
+                }
+            }
+        }
     }
     else
     {
-        currentKey++;
-        //reset currentQuiz
-        currentQuiz = 0
-
-        //set current cat to next cat
-        currentCat = quizData[quizKeys[currentKey]]
-        loadQuiz()
+        errorElem.style.display = 'block';
     }
 
 })

@@ -308,8 +308,9 @@ submitBtn.addEventListener('click', () => {
             }
             //update responseObj to be the avg of the current cat
             let catKey = quizKeys[currentKey]
-            responseObj[catKey] = (sum/currentCat.length).toFixed(2);
-
+            if(catKey !== 'expert_hetro'){
+                responseObj[catKey] = (sum/currentCat.length).toFixed(2);
+            }
             //increment the category current key to the next cat
             currentKey++;
 
@@ -323,7 +324,6 @@ submitBtn.addEventListener('click', () => {
             }
             else
             {
-                // console.log(quizData);
                 console.log(responseObj);
                 //last cat
                 if(currentQuiz === currentCat.length){
@@ -399,8 +399,8 @@ submitBtn.addEventListener('click', () => {
                                 </div>
                             </div>
                         </div>
-
-                        <div class="row gx-4 gx-lg-5 justify-content-center mt-5 mb-5">
+                        <center><small style="color: red; display: none; font-size: 15px;" id="formerror">All fields the are required!</small></center>
+                        <div class="row gx-4 gx-lg-5 justify-content-center mt-2 mb-5">
                             <div class="col-lg-6">
                                 <div class="d-grid"><button class="btn btn-success btn-xl" id="submitButton" type="submit">Submit</button></div>
                             </div>
@@ -408,6 +408,38 @@ submitBtn.addEventListener('click', () => {
                     </form>
                     `
                     document.getElementById('details-form').innerHTML = form
+
+                    // details elements
+                    const nameElem = document.getElementById('name')
+                    const emailElem = document.getElementById('email')
+                    const educationElem = document.getElementById('education')
+                    const regionElem = document.getElementById('region')
+                    const proj_ageElem = document.getElementById('proj_age')
+                    const submitBtnDetails = document.getElementById('submitButton')
+
+                    submitBtnDetails.addEventListener('click', function(event){
+                        event.preventDefault();
+
+                        if(document.querySelector('form').checkValidity()){
+                            // add the values to responseObj
+                            responseObj['name'] = nameElem.value
+                            responseObj['email'] = emailElem.value
+                            responseObj['education'] = educationElem.value
+                            responseObj['region'] = regionElem.value
+                            responseObj['proj_age'] =proj_ageElem.value
+                            console.log(responseObj)
+
+                        }
+                        else
+                        {
+                            document.getElementById('formerror').style.display = 'block'
+                            setTimeout(function(){
+                                document.getElementById('formerror').style.display = 'none'
+                            }, 3000)
+                        }
+                    })
+
+
                 }
             }
         }

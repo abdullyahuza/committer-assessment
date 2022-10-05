@@ -426,7 +426,7 @@ submitBtn.addEventListener('click', () => {
                             responseObj['email'] = emailElem.value
                             responseObj['education'] = educationElem.value
                             responseObj['region'] = regionElem.value
-                            responseObj['proj_age'] =proj_ageElem.value
+                            responseObj['proj_age'] = proj_ageElem.value
                             console.log(responseObj)
 
                         }

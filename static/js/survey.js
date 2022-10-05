@@ -163,8 +163,7 @@ const quizData = {
 // get the keys of the quizData -> quiz cats
 const quizKeys = Object.keys(quizData) //["int_learn","fin_gain"...]
 
-let lastQ = quizData[quizKeys[quizKeys.length-1]][0]['question']
-console.log(lastQ)
+// The response object
 const responseObj = {
     int_learn: '',
     fin_gain: '',
@@ -351,6 +350,56 @@ submitBtn.addEventListener('click', () => {
                                 </div>
                             </div>
                         </div>
+                        <div class='row'>
+                            <div class="col-md-6" style="margin: 0 auto;">
+                                <div class="form-floating mb-3">
+                                    <select id="education" name="education" class="form-control" required>
+                                        <option value=""></option>
+                                        <option value="doctorate">Doctorate</option>
+                                        <option value="master">Master</option>
+                                        <option value="bachelor">Bachelor</option>
+                                        <option value="high">High School</option>
+                                    </select>
+                                    <label for="education"><b>Select Education</b></label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class='row'>
+                            <div class="col-md-6" style="margin: 0 auto;">
+                                <div class="form-floating mb-3">
+                                    <select id="region" name="region" class="form-control" required>
+                                        <option value=""></option>
+                                        <option value="asia">Asia</option>
+                                        <option value="caribbean">Caribbean</option>
+                                        <option value="central america">Central America</option>
+                                        <option value="oceania">Oceania</option>
+                                        <option value="europe">Europe</option>
+                                        <option value="north america">North America</option>
+                                        <option value="south america">South America</option>
+                                    </select>
+                                    <label for="region"><b>Select Region</b></label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class='row'>
+                            <div class="col-md-6" style="margin: 0 auto;">
+                                <div class="form-floating mb-3">
+                                    <select class="form-control" name="proj_age" id="proj_age" required>
+                                        <option value=""></option>
+                                        <option value="1">1 month</option>
+                                        <option value="2">2 months</option>
+                                        <option value="3">3 months</option>
+                                        <option value="4">4 months</option>
+                                        <option value="5">5 months</option>
+                                        <option value="6">6 months</option>
+                                    </select>
+                                    <label for="dev_status"><b>Current Project Age</b></label>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="row gx-4 gx-lg-5 justify-content-center mt-5 mb-5">
                             <div class="col-lg-6">
                                 <div class="d-grid"><button class="btn btn-success btn-xl" id="submitButton" type="submit">Submit</button></div>

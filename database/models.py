@@ -29,28 +29,25 @@ def db_drop_and_create_all():
         username="abdullyahuza",
         name="Abdull Yahuza",
         email="yahuzaabdulrazak@gmail.com",
-        password=generate_password_hash("adminpass")
+        password=generate_password_hash("codediam")
     )
     db.session.add(admin)
 
     enquirer = Enquiry(
         name="Abdulrazak Yahuza",
-        age=50,
         education="master",
         email="yahuzaabdulrazak@gmail.com",
         region="north",
-        fin_gain=5,
-        int_learn=4,
-        dev_inv=4,
-        proj_desertion=4,
-        dev_status="Maturity",
-        dev_experience=4,
-        sys_int=3,
-        tech_norm=3,
-        code_test=3,
-        cont_code_dec=3,
-        dec_right_del=3,
-        proj_age=5,
+        fin_gain=6,
+        int_learn=6,
+        dev_inv=6,
+        proj_desertion=2,
+        dev_experience=5,
+        sys_int=6,
+        tech_norm=6,
+        code_test=6,
+        cont_code_dec=6,
+        dec_right_del=6,
         promoted=0,
         date_submitted=date.today()
     )
@@ -81,7 +78,6 @@ class User(db.Model):
 class Enquiry(db.Model):
     id = Column(Integer().with_variant(Integer, "sqlite"), primary_key=True)
     name = Column(String(200))
-    age = Column(Integer)
     education = Column(String(20))
     email = Column(String(120))
     region = Column(String(20))
@@ -89,14 +85,12 @@ class Enquiry(db.Model):
     int_learn = Column(Float)
     dev_inv = Column(Float)
     proj_desertion = Column(Integer)
-    dev_status = Column(String(20))
     dev_experience = Column(Integer)
     sys_int = Column(Float)
     tech_norm = Column(Float)
     code_test = Column(Float)
     cont_code_dec = Column(Float)
     dec_right_del = Column(Float)
-    proj_age = Column(Integer)
     promoted = Column(Boolean, default=0)
     date_submitted = Column(Date)
 
@@ -105,7 +99,6 @@ class Enquiry(db.Model):
         return {
             'e_id': self.id,
             'name': self.name.capitalize(),
-            'age': self.age,
             'education': self.education.capitalize(),
             'email': self.email,
             'region': self.region.capitalize(),
@@ -113,14 +106,12 @@ class Enquiry(db.Model):
             'int_learn': self.int_learn,
             'dev_inv': self.dev_inv,
             'proj_desertion': self.proj_desertion,
-            'dev_status': self.dev_status.capitalize(),
             'dev_experience': self.dev_experience,
             'sys_int': self.sys_int,
             'tech_norm': self.tech_norm,
             'code_test': self.code_test,
             'cont_code_dec': self.cont_code_dec,
             'dec_right_del': self.dec_right_del,
-            'proj_age': self.proj_age,
             'promoted': self.promoted,
             'date_submitted': self.date_submitted
         }

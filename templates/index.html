@@ -284,8 +284,11 @@
                     <div class="survey">
                         <div class="quiz-container" id="quiz">
                           <div class="quiz-header">
-                            <h2 id="question">Question text</h2>
-                            <ul>
+                            <span>
+                                <small id="qcounter"></small>
+                                <h2 id="question">Question text</h2>
+                            </span>
+                            <ul id="options">
                               <li>  
                                 <label>
                                     <input type="radio" name="answer" id="1" class="answer"> Strongly Disagree
@@ -322,7 +325,7 @@
                                 </label>
                               </li>
 
-                               <li>
+                               <li id='seven'>
                                 <label>
                                     <input type="radio" name="answer" id="7" class="answer"> Strongly Agree
                                 </label>

@@ -1,13 +1,3 @@
-/*const quizData = [
-    {
-        question: "Which language runs in a web browser?",
-        a: "Java",
-        b: "C",
-        c: "Python",
-        d: "JavaScript",
-        correct: "d",
-    }
-];*/
 
 const quizData = {
     int_learn: [
@@ -33,6 +23,17 @@ const quizData = {
         },
         {
             question: "Comparing to other programming jobs, working for the Blockchain project is very poorly paid."
+        }
+    ],
+    expert_hetro: [
+        {
+            question: "I believe members of the Blockchain project on which I work vary widely in their areas of expertise"
+        },
+        {
+            question: "I believe members of the Blockchain project on which I work have a variety of different backgrounds and experiences"
+        },
+        {
+            question: "I believe members of the Blockchain project on which I work have skills and abilities that complement each other’s"
         }
     ],
     tech_norm: [
@@ -149,24 +150,63 @@ const quizData = {
             question: "How often do you close your project user ID, before you contribute the code patches to a Blockchain project?"
         },
         {
-            question: "How often do you desert a Blockchain project?"
+            question: "How often do you desert a Blockchain project ?"
+        }
+    ],
+    dev_exp: [
+        {
+            question: "How many years of experience do have in Blockchain Technology ?"
         }
     ]
 }
 
-const quizKeys = Object.keys(quizData)
+// get the keys of the quizData -> quiz cats
+const quizKeys = Object.keys(quizData) //["int_learn","fin_gain"...]
 
+let lastQ = quizData[quizKeys[quizKeys.length-1]][0]['question']
+console.log(lastQ)
+const responseObj = {
+    int_learn: '',
+    fin_gain: '',
+    tech_norm: '',
+    sys_int: '',
+    code_test: '',
+    cont_code: '',
+    dec_right: '',
+    dev_inv: '',
+    proj_desert: '',
+    dev_exp: ''
+}
+
+
+
+// elements
 const quiz = document.getElementById('quiz')
 const answerEls = document.querySelectorAll('.answer')
 const questionEl = document.getElementById('question')
 const submitBtn = document.getElementById('submit')
 const errorElem = document.getElementById('error')
+const qcounterElem = document.getElementById('qcounter')
 
+
+
+//get the total number of questions
+let totalQs = 0
+let currentCounter = 1;
+for(let i = 0; i < quizKeys.length; i++){
+    let cCat = quizData[quizKeys[i]];
+    totalQs += cCat.length
+}
+qcounterElem.innerHTML = `${currentCounter} of ${totalQs}`
+//quiz cat index -> starting point
 let currentKey = 0
+
+//quiz current category
 let currentCat = quizData[quizKeys[currentKey]]
 
+//current quiz question
 let currentQuiz = 0
-let score = 0
+
 
 loadQuiz()
 
@@ -188,8 +228,9 @@ loadQuiz()
 
 
 
-
+// A function to load the quiz
 function loadQuiz() {
+    // deselect an answer when the next question is loaded
     deselectAnswers()
 
     const currentQuizData = currentCat[currentQuiz]
@@ -199,6 +240,7 @@ function loadQuiz() {
     
 }
 
+// A function to deselect an answer elemennt
 function deselectAnswers() {
     answerEls.forEach(answerEl => answerEl.checked = false)
 }
@@ -216,13 +258,32 @@ function getSelected() {
 }
 
 submitBtn.addEventListener('click', () => {
+    
+    //update the dom for dev_exp
+    if(currentCounter === totalQs-1){
+        document.getElementById('seven').style.display = 'none'
+    }
+    
+
+    //get the selected answer
     const answer = getSelected()
-    console.log(answer)    
+
     //set error elem display to none
     errorElem.style.display = 'none';
 
     //if question is answered get the next question
-    if(answer == undefined){
+    if(answer != undefined /*|| answer == undefined*/){
+
+        //the current question
+        const currentQuizData = currentCat[currentQuiz]
+
+        //set the answer to a particular question by updating the obj
+        currentQuizData['answer'] = answer
+        
+        //update counter & the element
+        currentCounter++;
+        qcounterElem.innerHTML = `${currentCounter} of ${totalQs}`;
+
         // go to the next question
         currentQuiz++;
 
@@ -231,7 +292,20 @@ submitBtn.addEventListener('click', () => {
         }
         else
         {
+            // calculate the average of last cat and push it to responseObj
+            // currentCat is an array of questions objs
+
+            let sum = 0;
+            for(let q = 0; q < currentCat.length; q++){
+                sum = sum + Number(currentCat[q]['answer'])
+            }
+            //update responseObj to be the avg of the current cat
+            let catKey = quizKeys[currentKey]
+            responseObj[catKey] = (sum/currentCat.length).toFixed(2);
+
+            //increment the category current key to the next cat
             currentKey++;
+
             //reset currentQuiz
             if(currentKey < quizKeys.length){
                 currentQuiz = 0
@@ -242,6 +316,8 @@ submitBtn.addEventListener('click', () => {
             }
             else
             {
+                // console.log(quizData);
+                console.log(responseObj);
                 //last cat
                 if(currentQuiz === currentCat.length){
                     //do something

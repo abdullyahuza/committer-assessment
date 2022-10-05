@@ -261,7 +261,15 @@ submitBtn.addEventListener('click', () => {
     
     //update the dom for dev_exp
     if(currentCounter === totalQs-1){
+        // hide the seventh element
         document.getElementById('seven').style.display = 'none'
+        //change the elements to display years
+        document.getElementById('one').innerHTML = '1 year'
+        document.getElementById('two').innerHTML = '2 years'
+        document.getElementById('three').innerHTML = '3 years'
+        document.getElementById('four').innerHTML = '4 years'
+        document.getElementById('five').innerHTML = '5 years'
+        document.getElementById('six').innerHTML = '6 years'
     }
     
 
@@ -272,7 +280,7 @@ submitBtn.addEventListener('click', () => {
     errorElem.style.display = 'none';
 
     //if question is answered get the next question
-    if(answer != undefined /*|| answer == undefined*/){
+    if(answer != undefined || answer == undefined){
 
         //the current question
         const currentQuizData = currentCat[currentQuiz]

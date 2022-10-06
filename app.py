@@ -34,7 +34,7 @@ app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 setup_db(app)
 
-# db_drop_and_create_all()
+db_drop_and_create_all()
 
 # use session
 @app.before_first_request  # runs before FIRST request (only once)
@@ -145,31 +145,32 @@ def prediction_result():
 @app.route('/', methods=['GET', 'POST'])
 def index():
     if request.method == "POST":
-
-        new_enquiry = Enquiry(
-            name=request.form["name"],
-            age=request.form["age"],
-            education=request.form["education"],
-            email=request.form["email"],
-            region=request.form["region"],
-            fin_gain=request.form["fin_gain"],
-            int_learn=request.form["int_learn"],
-            dev_inv=request.form["dev_inv"],
-            proj_desertion=request.form["proj_desertion"],
-            dev_status=request.form["dev_status"],
-            dev_experience=request.form["dev_experience"],
-            sys_int=request.form["sys_int"],
-            tech_norm=request.form["tech_norm"],
-            code_test=request.form["code_test"],
-            cont_code_dec=request.form["cont_code_dec"],
-            dec_right_del=request.form["dec_right_del"],
-            proj_age=request.form["proj_age"],
-            date_submitted=date.today()
-        )
-        db.session.add(new_enquiry)
-        db.session.commit()
-        flash({'type': 'success', 'msg': 'You\'ve Successfully submitted your data.'})
-        return redirect('/#form')
+        email = Enquiry.query.filter_by(email=request.form["email"]).first()
+        if email is None:            
+            new_enquiry = Enquiry(
+                name=request.form["name"],
+                education=request.form["education"],
+                email=request.form["email"],
+                region=request.form["region"],
+                fin_gain=request.form["fin_gain"],
+                int_learn=request.form["int_learn"],
+                dev_inv=request.form["dev_inv"],
+                proj_desertion=request.form["proj_desertion"],
+                dev_experience=request.form["dev_experience"],
+                sys_int=request.form["sys_int"],
+                tech_norm=request.form["tech_norm"],
+                code_test=request.form["code_test"],
+                cont_code_dec=request.form["cont_code_dec"],
+                dec_right_del=request.form["dec_right_del"],
+                proj_age=request.form["proj_age"],
+                date_submitted=date.today()
+            )
+            db.session.add(new_enquiry)
+            db.session.commit()
+            # flash({'type': 'success', 'msg': 'You\'ve Successfully submitted your data.'})
+            return jsonify({'redirect': '/#form', 'success': True})
+        else:
+            return jsonify({'redirect': '/#form', 'success': False})
     return render_template('index.html')
 
 #login route

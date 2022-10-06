@@ -48,6 +48,7 @@ def db_drop_and_create_all():
         code_test=6,
         cont_code_dec=6,
         dec_right_del=6,
+        proj_age=6,
         promoted=0,
         date_submitted=date.today()
     )
@@ -79,7 +80,7 @@ class Enquiry(db.Model):
     id = Column(Integer().with_variant(Integer, "sqlite"), primary_key=True)
     name = Column(String(200))
     education = Column(String(20))
-    email = Column(String(120))
+    email = Column(String(120), unique=True)
     region = Column(String(20))
     fin_gain = Column(Float)
     int_learn = Column(Float)
@@ -91,6 +92,7 @@ class Enquiry(db.Model):
     code_test = Column(Float)
     cont_code_dec = Column(Float)
     dec_right_del = Column(Float)
+    proj_age = Column(Integer)
     promoted = Column(Boolean, default=0)
     date_submitted = Column(Date)
 
@@ -112,6 +114,7 @@ class Enquiry(db.Model):
             'code_test': self.code_test,
             'cont_code_dec': self.cont_code_dec,
             'dec_right_del': self.dec_right_del,
+            'proj_age': self.proj_age,
             'promoted': self.promoted,
             'date_submitted': self.date_submitted
         }

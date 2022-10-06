@@ -1,5 +1,5 @@
 
-const quizData = {
+const surveyData = {
     int_learn: [
         {
             question: "Blockchain projects development increases my opportunities for a better job."
@@ -85,7 +85,7 @@ const quizData = {
             question: "I enjoy trying to solve complex Blockchain problems."
         }
     ],
-    cont_code: [
+    cont_code_dec: [
         {
             question: "To what extent the relationship between your contributed code and the Blockchain core project was characterized by plug-and-play."
         },
@@ -102,7 +102,7 @@ const quizData = {
             question: "To what extent the relationship between your contributed code and the Blockchain core project was characterized by small number of interdependencies."
         }
     ],
-    dec_right: [
+    dec_right_del: [
         {
             question: "To what extent the responsibility was distributed between you and the core developers for making decisions about the project features extension."
         },
@@ -136,7 +136,7 @@ const quizData = {
             question: "The Blockchain project matters to me."
         }
     ],
-    proj_desert: [
+    proj_desertion: [
         {
             question: "How frequently do you desert a Blockchain project after having created code patch for the same project implementation?"
         },
@@ -153,15 +153,15 @@ const quizData = {
             question: "How often do you desert a Blockchain project ?"
         }
     ],
-    dev_exp: [
+    dev_experience: [
         {
             question: "How many years of experience do have in Blockchain Technology ?"
         }
     ]
 }
 
-// get the keys of the quizData -> quiz cats
-const quizKeys = Object.keys(quizData) //["int_learn","fin_gain"...]
+// get the keys of the surveyData -> quiz cats
+const quizKeys = Object.keys(surveyData) //["int_learn","fin_gain"...]
 
 // The response object
 const responseObj = {
@@ -170,13 +170,12 @@ const responseObj = {
     tech_norm: '',
     sys_int: '',
     code_test: '',
-    cont_code: '',
-    dec_right: '',
+    cont_code_dec: '',
+    dec_right_del: '',
     dev_inv: '',
-    proj_desert: '',
-    dev_exp: ''
+    proj_desertion: '',
+    dev_experience: ''
 }
-
 
 
 // elements
@@ -187,13 +186,11 @@ const submitBtn = document.getElementById('submit')
 const errorElem = document.getElementById('error')
 const qcounterElem = document.getElementById('qcounter')
 
-
-
 //get the total number of questions
 let totalQs = 0
 let currentCounter = 1;
 for(let i = 0; i < quizKeys.length; i++){
-    let cCat = quizData[quizKeys[i]];
+    let cCat = surveyData[quizKeys[i]];
     totalQs += cCat.length
 }
 qcounterElem.innerHTML = `${currentCounter} of ${totalQs}`
@@ -201,30 +198,13 @@ qcounterElem.innerHTML = `${currentCounter} of ${totalQs}`
 let currentKey = 0
 
 //quiz current category
-let currentCat = quizData[quizKeys[currentKey]]
+let currentCat = surveyData[quizKeys[currentKey]]
 
 //current quiz question
 let currentQuiz = 0
 
-
+//load the quiz
 loadQuiz()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 // A function to load the quiz
@@ -232,10 +212,10 @@ function loadQuiz() {
     // deselect an answer when the next question is loaded
     deselectAnswers()
 
-    const currentQuizData = currentCat[currentQuiz]
+    const currentsurveyData = currentCat[currentQuiz]
 
 
-    questionEl.innerText = currentQuizData.question
+    questionEl.innerText = currentsurveyData.question
     
 }
 
@@ -282,10 +262,10 @@ submitBtn.addEventListener('click', () => {
     if(answer != undefined || answer == undefined){
 
         //the current question
-        const currentQuizData = currentCat[currentQuiz]
+        const currentsurveyData = currentCat[currentQuiz]
 
         //set the answer to a particular question by updating the obj
-        currentQuizData['answer'] = answer
+        currentsurveyData['answer'] = answer
         
         //update counter & the element
         currentCounter++;
@@ -309,7 +289,7 @@ submitBtn.addEventListener('click', () => {
             //update responseObj to be the avg of the current cat
             let catKey = quizKeys[currentKey]
             if(catKey !== 'expert_hetro'){
-                responseObj[catKey] = (sum/currentCat.length).toFixed(2);
+                responseObj[catKey] = Number((sum/currentCat.length).toFixed(2));
             }
             //increment the category current key to the next cat
             currentKey++;
@@ -319,7 +299,7 @@ submitBtn.addEventListener('click', () => {
                 currentQuiz = 0
 
                 //set current cat to next cat
-                currentCat = quizData[quizKeys[currentKey]]
+                currentCat = surveyData[quizKeys[currentKey]]
                 loadQuiz()
             }
             else
@@ -331,6 +311,8 @@ submitBtn.addEventListener('click', () => {
                     let form = `
                     <form>
                         <h4 style="text-align: center;">Enter your Name & Email Address</h4>
+                        <br/>
+                        <center><small style="font-size: 18px; font-weight:bold;" id="formsuccess"></small></center>
                         <br/>
                         <div class="row">
                             <div class="col-md-6" style="margin: 0 auto;">
@@ -427,7 +409,29 @@ submitBtn.addEventListener('click', () => {
                             responseObj['education'] = educationElem.value
                             responseObj['region'] = regionElem.value
                             responseObj['proj_age'] = proj_ageElem.value
-                            console.log(responseObj)
+                            console.log(typeof responseObj['fin_gain'])
+                            $.ajax({
+                              url:"/",
+                              method:"POST",
+                              data: responseObj,
+                              success: function(res){
+                                console.log(res)
+                                let successElem = document.getElementById('formsuccess');
+                                if(res.success === true){
+                                    successElem.style.color = 'green'
+                                    successElem.innerHTML = 'You\'ve Successfully submitted your data.'                                
+                                }
+                                else{
+                                    successElem.style.color = 'red'
+                                    successElem.innerHTML = 'You\'ve Already submitted your data.'                                
+                                }
+                                window.location.href = res.redirect
+                              },
+                              error: function(xhr, status, error){
+                                console.log(error)
+                              }
+                                  
+                             });
 
                         }
                         else
@@ -438,7 +442,6 @@ submitBtn.addEventListener('click', () => {
                             }, 3000)
                         }
                     })
-
 
                 }
             }

@@ -303,7 +303,6 @@ submitBtn.addEventListener('click', () => {
             }
             else
             {
-                console.log(responseObj);
                 //last cat
                 if(currentQuiz === currentCat.length){
                     //do something
@@ -408,13 +407,13 @@ submitBtn.addEventListener('click', () => {
                             responseObj['education'] = educationElem.value
                             responseObj['region'] = regionElem.value
                             responseObj['proj_age'] = proj_ageElem.value
-                            console.log(typeof responseObj['fin_gain'])
+
                             $.ajax({
                               url:"/",
                               method:"POST",
                               data: responseObj,
                               success: function(res){
-                                console.log(res)
+
                                 let successElem = document.getElementById('formsuccess');
                                 if(res.success === true){
                                     successElem.style.color = 'green'

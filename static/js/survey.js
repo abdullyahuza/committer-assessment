@@ -161,6 +161,19 @@ const surveyData = {
 
 // get the keys of the surveyData -> quiz cats
 const quizKeys = Object.keys(surveyData) //["int_learn","fin_gain"...]
+const categories = {
+    int_learn: "Intention to Learn",
+    fin_gain: "Financial Gain",
+    expert_hetro: "Expert Hetrogenity",
+    tech_norm: "Technical Norm",
+    sys_int: "System Integration",
+    code_test: "Code Testing Task",
+    cont_code_dec: "Continuous Code Integration",
+    dec_right_del: "Decision Right Delegation",
+    dev_inv: "Developer Involvement",
+    proj_desertion: "Project Desertion",
+    dev_experience: "Developer Experience"
+}
 
 // The response object
 const responseObj = {
@@ -183,6 +196,7 @@ const answerEls = document.querySelectorAll('.answer')
 const questionEl = document.getElementById('question')
 const submitBtn = document.getElementById('submit')
 const errorElem = document.getElementById('error')
+const qcatElem = document.getElementById('qcat')
 const qcounterElem = document.getElementById('qcounter')
 
 //get the total number of questions
@@ -199,6 +213,9 @@ let currentKey = 0
 //quiz current category
 let currentCat = surveyData[quizKeys[currentKey]]
 
+let currentCatText = quizKeys[currentKey]
+
+qcatElem.innerHTML = `${categories[currentCatText]}`
 //current quiz question
 let currentQuiz = 0
 
@@ -292,6 +309,10 @@ submitBtn.addEventListener('click', () => {
             }
             //increment the category current key to the next cat
             currentKey++;
+            // set currentCatText to next
+            currentCatText = quizKeys[currentKey]
+            //update the DOM
+            qcatElem.innerHTML = `${categories[currentCatText]}`
 
             //reset currentQuiz
             if(currentKey < quizKeys.length){

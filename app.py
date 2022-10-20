@@ -168,13 +168,18 @@ def index():
             db.session.add(new_enquiry)
             db.session.commit()
             # flash({'type': 'success', 'msg': 'You\'ve Successfully submitted your data.'})
-            return jsonify({'redirect': '/#form', 'success': True})
+            return jsonify({'redirect': 'survey#form', 'success': True})
         else:
-            return jsonify({'redirect': '/#form', 'success': False})
+            return jsonify({'redirect': 'survey#form', 'success': False})
     return render_template('index.html')
 
+# Survey route
+@app.route('/survey', methods=['GET'])
+def survey():
+    return render_template('survey.html')
+
 #login route
-@app.route('/lead', methods=['GET', 'POST'])
+@app.route('/project-leader', methods=['GET', 'POST'])
 def login():
     if session.get("user_id"):
         return redirect(url_for("dashboard"))
@@ -268,7 +273,7 @@ def status_file():
 @login_required
 def logout():
     session.clear()
-    return redirect('/lead')
+    return redirect('/project-leader')
 
 # logout route
 @app.route('/error')

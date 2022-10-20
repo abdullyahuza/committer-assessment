@@ -163,12 +163,12 @@ const surveyData = {
 const quizKeys = Object.keys(surveyData) //["int_learn","fin_gain"...]
 const categories = {
     int_learn: "Intention to Learn",
-    fin_gain: "Financial Gain",
+    fin_gain: "Financial Gain Intention",
     expert_hetro: "Expert Hetrogenity",
-    tech_norm: "Technical Norm",
+    tech_norm: "Technical Contribution Norm",
     sys_int: "System Integration",
     code_test: "Code Testing Task",
-    cont_code_dec: "Continuous Code Integration",
+    cont_code_dec: "Contributed Code Decoupling",
     dec_right_del: "Decision Right Delegation",
     dev_inv: "Developer Involvement",
     proj_desertion: "Project Desertion",
@@ -215,7 +215,7 @@ let currentCat = surveyData[quizKeys[currentKey]]
 
 let currentCatText = quizKeys[currentKey]
 
-qcatElem.innerHTML = `${categories[currentCatText]}`
+// qcatElem.innerHTML = `${categories[currentCatText]}`
 //current quiz question
 let currentQuiz = 0
 
@@ -259,12 +259,12 @@ submitBtn.addEventListener('click', () => {
         // hide the seventh element
         document.getElementById('seven').style.display = 'none'
         //change the elements to display years
-        document.getElementById('one').innerHTML = '1 year'
-        document.getElementById('two').innerHTML = '2 years'
-        document.getElementById('three').innerHTML = '3 years'
-        document.getElementById('four').innerHTML = '4 years'
-        document.getElementById('five').innerHTML = '5 years'
-        document.getElementById('six').innerHTML = '6 years'
+        document.getElementById('one').innerHTML = '<1 year'
+        document.getElementById('two').innerHTML = '1-2 years'
+        document.getElementById('three').innerHTML = '2-3 years'
+        document.getElementById('four').innerHTML = '3-4 years'
+        document.getElementById('five').innerHTML = '4-5 years'
+        document.getElementById('six').innerHTML = '>5 years'
     }
     
 
@@ -312,7 +312,7 @@ submitBtn.addEventListener('click', () => {
             // set currentCatText to next
             currentCatText = quizKeys[currentKey]
             //update the DOM
-            qcatElem.innerHTML = `${categories[currentCatText]}`
+            // qcatElem.innerHTML = `${categories[currentCatText]}`
 
             //reset currentQuiz
             if(currentKey < quizKeys.length){
@@ -372,6 +372,7 @@ submitBtn.addEventListener('click', () => {
                                     <select id="region" name="region" class="form-control" required>
                                         <option value=""></option>
                                         <option value="asia">Asia</option>
+                                        <option value="africa">Africa</option>
                                         <option value="caribbean">Caribbean</option>
                                         <option value="central america">Central America</option>
                                         <option value="oceania">Oceania</option>
@@ -389,12 +390,12 @@ submitBtn.addEventListener('click', () => {
                                 <div class="form-floating mb-3">
                                     <select class="form-control" name="proj_age" id="proj_age" required>
                                         <option value=""></option>
-                                        <option value="1">1 month</option>
-                                        <option value="2">2 months</option>
-                                        <option value="3">3 months</option>
-                                        <option value="4">4 months</option>
-                                        <option value="5">5 months</option>
-                                        <option value="6">6 months</option>
+                                        <option value="1"><1 year</option>
+                                        <option value="2">1-2 years</option>
+                                        <option value="3">2-3 years</option>
+                                        <option value="4">3-4 years</option>
+                                        <option value="5">4-5 years</option>
+                                        <option value="6">>5 years</option>
                                     </select>
                                     <label for="dev_status"><b>Current Project Age</b></label>
                                 </div>
